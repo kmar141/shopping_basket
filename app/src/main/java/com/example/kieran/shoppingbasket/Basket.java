@@ -20,4 +20,16 @@ public class Basket {
     public int itemCount(){
         return this.items.size();
     }
+
+    public void addItem(Item item) {
+        items.add(item);
+    }
+
+    public void removeItem(Item item) {
+        items.remove(item);
+    }
+
+    public void clearBasket() {
+        items.clear();
+    }
 }
