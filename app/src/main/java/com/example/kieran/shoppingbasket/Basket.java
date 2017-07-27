@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 public class Basket {
     public ArrayList<Item> items;
+    double total = 0;
+    double discount = 0;
 
     public Basket() {
         this.items = new ArrayList<Item>();
@@ -31,5 +33,20 @@ public class Basket {
 
     public void clearBasket() {
         items.clear();
+    }
+
+
+    public double totalPrice() {
+        for (Item item : items){
+            total = total + item.getPrice();
+        }
+        return total;
+    }
+
+    public double totalOverTwenty() {
+        if (total > 20) {
+            discount = (total * 0.9);
+        }
+        return discount;
     }
 }
