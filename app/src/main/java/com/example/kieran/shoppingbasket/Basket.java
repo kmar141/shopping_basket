@@ -10,6 +10,8 @@ public class Basket {
     public ArrayList<Item> items;
     double total = 0;
     double discount = 0;
+    double loyaltyDiscount = 0;
+
 
     public Basket() {
         this.items = new ArrayList<Item>();
@@ -45,8 +47,15 @@ public class Basket {
 
     public double totalOverTwenty() {
         if (total > 20) {
-            discount = (total * 0.9);
+            return discount = (total * 0.9);
         }
         return discount;
+    }
+
+    public double loyaltyCardDiscount(Customer customer) {
+        if (customer.hasLoyaltyCard()){
+            loyaltyDiscount = (total * 0.98);
+        }
+        return loyaltyDiscount;
     }
 }

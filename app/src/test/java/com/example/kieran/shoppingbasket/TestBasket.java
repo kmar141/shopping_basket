@@ -64,21 +64,5 @@ public class TestBasket {
         assertEquals(0, items.itemCount());
     }
 
-    @Test
-    public void testBasketPriceTotal() throws Exception {
-        items.addItem(socks);
-        items.addItem(umbrella);
-        assertEquals(10, items.totalPrice(), 0);
-    }
 
-    @Test
-    public void testOverTwentyDiscount() throws Exception {
-        items.addItem(umbrella);
-        items.addItem(umbrella);
-        items.addItem(umbrella);
-        items.addItem(socks);
-        items.addItem(book);
-        assertEquals(27, items.totalOverTwenty(), 0);
-
-    }
 }
